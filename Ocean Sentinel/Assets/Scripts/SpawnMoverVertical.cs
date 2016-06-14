@@ -12,12 +12,6 @@ public class SpawnMoverVertical : MonoBehaviour
 {
 	private bool leave = false; //if the spawn points can move or not
 
-	// Use this for initialization
-	void Start()
-	{
-
-	}
-
 	//Custom Lerp function by the project manager. The object's transform.position becomes a new Vector3 variable
 	void Lerp(float a, float b, float c)
 	{
@@ -35,7 +29,6 @@ public class SpawnMoverVertical : MonoBehaviour
 			{
 				Lerp(0, 0, 0.4f);
 			}
-
 			//If leave is false, the object's Z-Coordinate will decrease
 			if (leave == false)
 			{
@@ -44,18 +37,15 @@ public class SpawnMoverVertical : MonoBehaviour
 		}
 
 		//If the object's Z-Coordinate, relative to its parent, is less than or equal to -10, set leave to true
-		if (gameObject.transform.localPosition.z <= -10)
+		if (gameObject.transform.localPosition.z <= -60)
 		{
 			leave = true;
-			//Debug.Log(leave);
 		}
 
 		//If the object's Z-Coordinate, relative to its parent, is greater than or equal to 35, set leave to false
-		if (gameObject.transform.localPosition.z >= 50)
+		if (gameObject.transform.localPosition.z >= 60)
 		{
 			leave = false;
-			//Debug.Log(leave);
 		}
-		
 	}
 }
